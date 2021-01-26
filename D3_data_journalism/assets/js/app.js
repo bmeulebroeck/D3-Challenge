@@ -27,11 +27,11 @@ var chosenYAxis = "obesity";
 
 //============================================================================
 //============================================================================
-//Functions to create the x and y axes based on the selections made
+//Functions to set the scale for the x and y axes based on the data selected
 function xScale(censusData, chosenXAxis) {
     var xLinearScale = d3.scaleLinear()
-        .domain([d3.min(censusData, d => d[chosenXAxis]) *0.8,
-        d3.max(censusData, d => d[chosenXAxis])*1.1
+        .domain([d3.min(censusData, d => d[chosenXAxis]) *0.9,
+        d3.max(censusData, d => d[chosenXAxis])
         ])
         .range([0, width])
         .nice();
@@ -48,20 +48,9 @@ function yScale(censusData, chosenYAxis) {
     return yLinearScale;
 }
 
-//Functions to update the x and y axes based on the selections made
-// function renderAxes(newXScale, xAxis, newYScale, yAxis) {
-//     var bottomAxis = d3.axisBottom(newXScale);
-//     var leftAxis = d3.axisLeft(newYScale);
-
-//     xAxis.transition()
-//         .duration(1000)
-//         .call(bottomAxis);
-
-//     yAxis.transition()
-//         .duration(1000)
-//         .call(leftAxis);
-//     return xAxis, yAxis;
-// }
+//============================================================================
+//============================================================================
+//Functions to render the x and y axes based on data selected
 
 function renderXAxis (newXScale, xAxis) {
     var bottomAxis = d3.axisBottom(newXScale);
@@ -77,7 +66,7 @@ function renderYAxis (newYScale, yAxis) {
 
 //============================================================================
 //============================================================================
-//Function to update circles group and transition to data selection
+//Function to update circles group and state abbrs and transition to data selected
 function renderCircles(circlesGroup, newXScale, chosenXAxis, newYScale, chosenYAxis) {
     circlesGroup.transition()
         .duration(1000)
@@ -95,7 +84,7 @@ function renderStateAbbrs(stateAbbrGroup, newXScale, chosenXAxis, newYScale, cho
 
 //============================================================================
 //============================================================================
-//Function to update the tooltip based on data selection
+//Function to update the tooltip based on data selected
 function updateToolTip(chosenXAxis, chosenYAxis, stateAbbrGroup) {
     var labelX;
 
