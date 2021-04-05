@@ -133,7 +133,7 @@ function updateToolTip(chosenXAxis, chosenYAxis, stateAbbrGroup) {
 //============================================================================
 //============================================================================
 //Retrieve the data from the CSV file
-d3.csv("./assets/data/data.csv").then(function(censusData, err) {
+d3.csv("./D3_data_journalism/assets/data/data.csv").then(function(censusData, err) {
     if (err) throw err;
 
     //Parse the data needed
