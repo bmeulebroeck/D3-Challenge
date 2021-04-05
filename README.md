@@ -4,7 +4,7 @@
 
 ![main graphic](D3_data_journalism/assets/screens/main_graphic.png)<br><br>
 
-Click [HERE]() to see the interactive graphic.<br><br>
+Click [HERE](https://bmeulebroeck.github.io/D3-Challenge/index.html) to see the interactive graphic.<br><br>
 
 <p>My app.js does the following:</p>
 1. Establishes the SVG parameters (width and height) and the margins to establish the canvas; creates the chartGroup and initial chart parameters.<br>
